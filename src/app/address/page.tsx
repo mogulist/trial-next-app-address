@@ -1,5 +1,6 @@
 import SearchInput from "./components/SearchInput";
 import AddressList from "./components/AddressList";
+import Pagination from "./components/Pagination";
 
 type Props = {
   params: { slug: string };
@@ -8,8 +9,8 @@ type Props = {
 
 const Address = async ({ searchParams }: Props) => {
   console.log("searchParams: ", searchParams);
-  const { keyword } = searchParams;
-  const data = await getData(keyword as string);
+  const { keyword, page } = searchParams;
+  const data = await getData(keyword as string, Number(page));
   console.log("fetched data: ", data);
 
   return (
@@ -23,6 +24,7 @@ const Address = async ({ searchParams }: Props) => {
         </div>
       </div>
       <AddressList data={data} />
+      <Pagination keyword={keyword as string} page={page as string} />
     </main>
   );
 };
@@ -30,7 +32,7 @@ const Address = async ({ searchParams }: Props) => {
 export default Address;
 
 // add page and pageSize
-const getData = async (keyword: string) => {
+const getData = async (keyword: string, page: number) => {
   return [
     {
       detBdNmList: "701동, 705동, 상가동, 703동, 704동, 관리동, 702동",

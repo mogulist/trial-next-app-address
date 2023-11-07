@@ -11,7 +11,7 @@ type Props = {
 
 const AddressList = ({ data }: Props) => {
   return (
-    <ul className="min-h-36 max-h-72 px-4 text-sm bg-white text-black overflow-auto divide-y divide-slate-300">
+    <ul className="min-h-36 max-h-60 px-4 text-sm bg-white text-black overflow-auto divide-y divide-slate-300">
       {data.map((addr) => (
         <li key={addr.amdCd} className="flex flex-row justify-between py-1 ">
           <div className="flex flex-col">

@@ -13,7 +13,7 @@ const SearchInput = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("submit: ", keyword);
-    router.push(`/address?keyword=${keyword}`);
+    router.push(`/address?keyword=${keyword}&page=${1}`);
   };
 
   return (
