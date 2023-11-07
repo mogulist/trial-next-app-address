@@ -15,7 +15,6 @@ const Address = async ({ searchParams }: Props) => {
 
   return (
     <main className="max-w-[500px]">
-      Address
       <div className="bg-slate-200 text-black flex flex-col items-center px-8 py-4">
         <SearchInput />
         <div className="w-full flex flex-row justify-start pt-2">
