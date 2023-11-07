@@ -18,7 +18,7 @@ const Pagination = ({ keyword, page }: Props) => {
       ) : (
         <span className="text-gray-300">{"<"}</span>
       )}
-      <div>{page}</div>
+      <div>{finalPage}</div>
       <Link href={`address?keyword=${keyword}&page=${finalPage + 1}`}>
         {">"}
       </Link>
