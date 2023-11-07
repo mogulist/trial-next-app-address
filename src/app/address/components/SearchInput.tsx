@@ -2,8 +2,11 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-const SearchInput = () => {
-  const [keyword, setKeyword] = useState("");
+type Props = {
+  text: string;
+};
+const SearchInput = ({ text }: Props) => {
+  const [keyword, setKeyword] = useState(text ?? "");
   const router = useRouter();
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Pagination from "./components/Pagination";
 
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: { [key: string]: string | undefined };
 };
 
 const Address = async ({ searchParams }: Props) => {
@@ -16,7 +16,7 @@ const Address = async ({ searchParams }: Props) => {
   return (
     <main className="max-w-[500px]">
       <div className="bg-slate-200 text-black flex flex-col items-center px-8 py-4">
-        <SearchInput />
+        <SearchInput text={keyword as string} />
         <div className="w-full flex flex-row justify-start pt-2">
           <input type="checkbox" className="mr-2" />
           <div className="text-xs">변동된 주소정보 포함</div>
