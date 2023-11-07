@@ -1,6 +1,13 @@
 import SearchInput from "./components/SearchInput";
 
-const Address = () => {
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+const Address = ({ searchParams }: Props) => {
+  console.log("searchParams: ", searchParams);
+
   return (
     <main className="max-w-[500px]">
       Address
