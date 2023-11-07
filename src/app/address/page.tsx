@@ -32,6 +32,8 @@ export default Address;
 
 // add page and pageSize
 const getData = async (keyword: string, page: number) => {
+  if (!keyword) return [];
+
   return [
     {
       detBdNmList: "701동, 705동, 상가동, 703동, 704동, 관리동, 702동",
